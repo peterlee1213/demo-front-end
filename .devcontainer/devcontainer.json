@@ -1,0 +1,31 @@
+{
+    "name": "demo-front-end",
+    "dockerComposeFile": "../docker-compose.yaml",
+    "forwardPorts": [
+        "3010:3010"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dsznajder.es7-react-js-snippets",
+                "ms-vscode.vscode-typescript-next",
+                "yzhang.markdown-all-in-one",
+                "PulkitGangwar.nextjs-snippets",
+                "bradlc.vscode-tailwindcss",
+                "redhat.vscode-yaml"
+            ],
+            "settings": {
+                "workbench.editor.wrapTabs": true,
+                "files.eol": "\n"
+            }
+        }
+    },
+    // Default path to open when attaching to a new container.
+    "workspaceFolder": "/code",
+    // the name of container is《folder name》+《service name》，this service must match the service name in docker-compose.yaml, because there could be many services in one docker compose file, I have to tell vscode to create container with which service
+    "service": "demo-front-end",
+    // command to be executed after the container is started up
+    "postStartCommand": "sudo chown -R root:root /code",
+    // use root user by default
+    "remoteUser": "root"
+}

@@ -1,0 +1,19 @@
+services:
+  demo-front-end:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3010:3010
+    networks:
+      - demo-resume-network
+    working_dir: /code
+    volumes:
+      # directory mapping for codebase
+      - /home/zheng/front/demo-front-end:/code
+      # sharing git credentials
+      - /home/zheng/.ssh:/root/.ssh
+
+networks:
+  demo-resume-network:
+    external: true
