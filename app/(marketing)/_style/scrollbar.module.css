@@ -1,0 +1,18 @@
+/*高宽分别对应横竖滚动条的尺寸*/
+.customizeScrollbarContainer::-webkit-scrollbar {
+    width: 10px;
+    height: 3px;
+}
+
+/* 滚动条样式 */
+.customizeScrollbarContainer::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #535353;
+}
+
+
+/* 滚动条轨道样式 */
+.customizeScrollbarContainer::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #ededed;
+}
