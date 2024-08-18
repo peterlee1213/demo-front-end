@@ -6,6 +6,7 @@ import FeatureProduct from "./_components/FeatureProduct";
 import ClaimRewards from "./_components/ClaimRewards";
 import PopularProducts from "./_components/PopularProducts";
 import NewNowNow from "./_components/NewNowNow";
+import DiscoverTheWorldOfPixel from "./_components/DiscoverTheWorldOfPixel";
 
 // max-width: 1440px
 export default async function () {
@@ -18,6 +19,7 @@ export default async function () {
                 <ClaimRewards></ClaimRewards>
                 <PopularProducts></PopularProducts>
                 <NewNowNow></NewNowNow>
+                <DiscoverTheWorldOfPixel></DiscoverTheWorldOfPixel>
             </div>
 
         </div>
