@@ -1,8 +1,12 @@
+"use client"
+
 import STYLE from "../_const/style";
 import DiscoverTheWorldItem, { DiscoverTheWorldItemProps } from "./DiscoverTheWorldItem";
 import Fab from '@mui/material/Fab';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import styles from "../_style/hidescrollbar.module.css";
+import React from "react";
 
 const discoverTheWorldItemList: DiscoverTheWorldItemProps[] = [
     {
@@ -40,23 +44,48 @@ const discoverTheWorldItemList: DiscoverTheWorldItemProps[] = [
 ];
 
 const DiscoverTheWorldOfPixel = () => {
+
+    const onRightClick = () => {
+        const element = document.querySelector(".discoverTheWorldOfPixelContent");
+        if (element) {
+            const itemElement = document.querySelector(".discoverTheWorldOfPixelItem");
+            if (itemElement) {
+                element.scrollBy({ top: 0, left: itemElement.clientWidth, behavior: "smooth" });
+            }
+        }
+    }
+
+    const onLeftClick = () => {
+        const element = document.querySelector(".discoverTheWorldOfPixelContent");
+        if (element) {
+            const itemElement = document.querySelector(".discoverTheWorldOfPixelItem");
+            if (itemElement) {
+                element.scrollBy({ top: 0, left: -(itemElement.clientWidth), behavior: "smooth" });
+            }
+        }
+    }
+
     return (
         <div>
             <div className={STYLE.HEADER_FONT_STYLE + " mt-32 mb-10"}>Discover the world of Pixel.</div>
-            <div className="flex">
-                <Fab>
-                    <ChevronLeftIcon></ChevronLeftIcon>
-                </Fab>
-                <div>
-                    {
-                        discoverTheWorldItemList.map((item, index) => (
-                            <DiscoverTheWorldItem key={index} {...item}></DiscoverTheWorldItem>
-                        ))
-                    }
+            <div className="">
+                <div className="flex max-w-[1440px] items-center mx-auto">
+                    <Fab className="w-14 flex-none" onClick={() => onLeftClick()}>
+                        <ChevronLeftIcon></ChevronLeftIcon>
+                    </Fab>
+                    <div className={"discoverTheWorldOfPixelContent text-nowrap grow overflow-x-auto " + styles.hideScrollBar}>
+                        {
+                            discoverTheWorldItemList.map((item, index) => (
+                                <div key={index} className="discoverTheWorldOfPixelItem inline-block w-1/3 px-3 ">
+                                    <DiscoverTheWorldItem {...item}></DiscoverTheWorldItem>
+                                </div>
+                            ))
+                        }
+                    </div>
+                    <Fab className="w-14 flex-none" onClick={() => onRightClick()}>
+                        <ChevronRightIcon></ChevronRightIcon>
+                    </Fab>
                 </div>
-                <Fab>
-                    <ChevronRightIcon></ChevronRightIcon>
-                </Fab>
             </div>
         </div>
     );

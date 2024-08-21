@@ -31,9 +31,9 @@ const DiscoverTheWorldItem = (props: DiscoverTheWorldItemProps) => {
 
     return (
         <div>
-            <Image src={pictureUrl} width={width} height={height} alt={alt}></Image>
-            <div>{description}</div>
-            <div>
+            <Image className="rounded-3xl aspect-square" src={pictureUrl} width={width} height={height} alt={alt}></Image>
+            <div className="mt-10 text-base font-bold text-wrap text-center h-20">{description}</div>
+            <div className="text-center">
                 <UnderScoreButton>Read article</UnderScoreButton>
             </div>
         </div>

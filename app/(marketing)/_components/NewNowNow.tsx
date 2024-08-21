@@ -64,7 +64,7 @@ const NewNowNow = () => {
         <div className="flex flex-col items-center">
             <div className={STYLE.HEADER_FONT_STYLE + " mt-32 mb-20"}>New. Now. Wow.</div>
             <div>
-                <div className="flex max-w-7xl gap-6">
+                <div className="flex max-w-[1440px] gap-6">
                     {
                         firstLineItems.map((item, index) => (
                             <div key={index} className="basis-1/2">
@@ -84,7 +84,7 @@ const NewNowNow = () => {
                         }
                     </div>
                 </div>
-                <div className="flex max-w-7xl gap-6">
+                <div className="flex max-w-[1440px] gap-6">
                     {
                         thirdLineItems.map((item, index) => (
                             <div key={index} className="basis-1/3">

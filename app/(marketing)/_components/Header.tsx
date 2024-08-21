@@ -87,7 +87,7 @@ export default function Header() {
         <AppBar id="indexMarketingPageAppBar" className='top-0 shadow-none sticky bg-white'>
             <div>
                 <div className='max-w-[1440px] mx-auto'>
-                    <Toolbar className='flex justify-between max-w-full'>
+                    <Toolbar className='flex justify-between max-w-full px-0'>
                         <div className={DEFAULT_MENU_ITEM_CLASS}>
                             <Link href={"#"}>
                                 <Image src={"/images/google.svg"} alt='website icon' width={30} height={30}></Image>

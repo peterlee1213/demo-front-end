@@ -1,6 +1,6 @@
 "use client";
-import type { AppStore } from "@/lib/store";
-import { makeStore } from "@/lib/store";
+import type { AppStore } from "@/lib/redux/store";
+import { makeStore } from "@/lib/redux/store";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import type { ReactNode } from "react";
 import { useEffect, useRef } from "react";

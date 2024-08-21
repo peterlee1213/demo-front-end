@@ -85,7 +85,7 @@ export default function PopularProducts() {
     return (
         <div className="flex flex-col items-center">
             <div className={STYLE.HEADER_FONT_STYLE + " mt-28"}>Popular on the Google Store.</div>
-            <div className={"flex flex-row max-w-7xl overflow-x-auto gap-6 p-8 " + styles.customizeScrollbarContainer}>
+            <div className={"flex flex-row max-w-[1440px] overflow-x-auto gap-6 p-8 " + styles.customizeScrollbarContainer}>
                 {
                     productList.map((product, index) => (
                         <ProductItem key={index} {...product}></ProductItem>
